@@ -98,16 +98,18 @@ nav.navigation a.active {
     color: white;
 }
 
+/* ==================== CONTRAST FIXED ==================== */
 section.text,
 section.content {
     background-color: var(--color-primary);
-    color: var(--color-text);
+    color: var(--color-text);           /* Dark text on light background */
     padding: 15px;
     min-height: 150px;
     margin-bottom: 15px;
     border-radius: 6px;
 }
 
+/* Dark background with white text for better contrast */
 section.content {
     background-color: var(--color-secondary);
     color: white;
