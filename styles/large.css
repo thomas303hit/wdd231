@@ -1,0 +1,33 @@
+@media (min-width: 64em) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    header {
+        padding: 1.5rem 2rem;
+    }
+    
+    main {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    
+    .hero {
+        grid-column: 1 / -1;
+    }
+    
+    #cert {
+        grid-column: 1;
+    }
+    
+    .contact {
+        grid-column: 2;
+    }
+    
+    .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}

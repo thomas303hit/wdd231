@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 | Home - Thomas Guedes</title>
+    <meta name="description" content="Course home page for WDD 231 - Web Frontend Development I by Thomas Guedes, Brazil.">
+    <meta name="author" content="Thomas Guedes">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    
+    <script defer src="scripts/navigation.js"></script>
+    <script defer src="scripts/date.js"></script>
+    <script defer src="scripts/courses.js"></script>
+</head>
+<body>
+    <header>
+        <picture>
+            <img src="images/logo.svg" alt="Thomas Guedes logo" loading="lazy" width="50" height="50">
+        </picture>
+        <span>Thomas Guedes</span>
+        <button id="menu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    
+    <nav>
+        <ul id="primarynav">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="chamber.html">Chamber</a></li>
+            <li><a href="final.html">Final</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1>Home</h1>
+        
+        <section class="hero">
+            <h2>Welcome to My Web Development Journey</h2>
+            <picture>
+                <source media="(max-width: 640px)" srcset="images/hero-small.webp">
+                <img src="images/hero.webp" alt="Scenic web development landscape" loading="lazy" width="800" height="400">
+            </picture>
+        </section>
+        
+        <section id="cert">
+            <h2>Web &amp; Computer Programming Certificate</h2>
+            <div class="button-group">
+                <button class="filter active" data-filter="all">All Courses</button>
+                <button class="filter" data-filter="wdd">WDD Courses</button>
+                <button class="filter" data-filter="cse">CSE Courses</button>
+            </div>
+            <div id="courses-container" class="courses-grid"></div>
+            <div id="total-credits"></div>
+        </section>
+        
+        <section class="contact">
+            <h2>Connect With Me</h2>
+            <p>Explore my projects and reach out via social media or email.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <ul class="social">
+            <li><a href="https://github.com/YOURUSERNAME/wdd231" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/YOURUSERNAME/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a></li>
+            <li><a href="https://instagram.com/YOURUSERNAME/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a></li>
+        </ul>
+        <p>&copy; <span id="currentyear"></span> | Thomas Guedes | Brazil</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
