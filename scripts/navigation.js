@@ -1,15 +1,17 @@
-const hambutton = document.getElementById('menu');
-const mainnav = document.getElementById('primarynav');
+const navbutton = document.querySelector('#ham-btn');
+const navbar = document.querySelector('.navigation');
+const main = document.querySelector('main');
 
-hambutton.addEventListener('click', () => {
-    mainnav.classList.toggle('open');
-    hambutton.classList.toggle('open');
+navbutton.addEventListener('click', () => {
+    navbar.classList.toggle('open');
+    main.classList.toggle('main-shifted');
+    navbutton.textContent = navbar.classList.contains('open') ? 'X' : '☰';
 });
 
-// Fechar menu ao clicar em um link (mobile)
-document.querySelectorAll('#primarynav a').forEach(link => {
-    link.addEventListener('click', () => {
-        mainnav.classList.remove('open');
-        hambutton.classList.remove('open');
-    });
-});
+const filterAll = document.querySelector('#filter-all');
+const filterWDD = document.querySelector('#filter-wdd');
+const filterCSE = document.querySelector('#filter-cse');
+
+filterAll.addEventListener('click', () => filterCourses('all'));
+filterWDD.addEventListener('click', () => filterCourses('WDD'));
+filterCSE.addEventListener('click', () => filterCourses('CSE'));

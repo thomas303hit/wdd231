@@ -1,56 +1,97 @@
 const courses = [
-    {courseId: 'WDD 100', courseName: 'Introduction to Web Development', credits: 1, completed: false},
-    {courseId: 'WDD 110', courseName: 'Web Development Foundations', credits: 3, completed: false},
-    {courseId: 'WDD 130', courseName: 'JavaScript Language Basics', credits: 3, completed: false},
-    {courseId: 'WDD 131', courseName: 'HTML/CSS Styling', credits: 3, completed: true},
-    {courseId: 'WDD 231', courseName: 'Web Frontend Development I', credits: 3, completed: false},
-    {courseId: 'CSE 110', courseName: 'Introduction to Programming', credits: 3, completed: true},
-    {courseId: 'CSE 134', courseName: 'Web Scripting', credits: 3, completed: false},
-    {courseId: 'CSE 210', courseName: 'Programming Foundations', credits: 3, completed: false}
+    {
+        subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        technology: ['Python'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 130,
+        title: 'Web Fundamentals',
+        credits: 2,
+        technology: ['HTML', 'CSS'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
+        credits: 2,
+        technology: ['Python'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        technology: ['C#'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Frontend Web Development I',
+        credits: 2,
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: false
+    }
 ];
 
-const coursesContainer = document.getElementById('courses-container');
-const totalCreditsEl = document.getElementById('total-credits');
-const filterButtons = document.querySelectorAll('.filter');
+const container = document.getElementById("course-groups");
+const totalCreditsDiv = document.getElementById("total-credits");
 
-function displayCourses(filteredCourses) {
-    coursesContainer.innerHTML = '';
-    
-    const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-    totalCreditsEl.textContent = `Total Credits: ${totalCredits}`;
+function renderCourses(filteredCourses) {
+
+    container.innerHTML = '';
+
+    const totalCredits = filteredCourses.reduce(
+        (sum, course) => sum + course.credits,
+        0
+    );
 
     filteredCourses.forEach(course => {
+
         const card = document.createElement('div');
+
         card.className = `course-card ${course.completed ? 'completed' : ''}`;
+
         card.innerHTML = `
-            <h3>${course.courseId}</h3>
-            <p>${course.courseName}</p>
-            <p><strong>${course.credits} Credit${course.credits > 1 ? 's' : ''}</strong></p>
+            <strong>${course.subject} ${course.number}</strong><br>
+            ${course.title}<br>
+            Credits: ${course.credits}<br>
+            Technologies: ${course.technology.join(', ')}
         `;
-        coursesContainer.appendChild(card);
+
+        container.appendChild(card);
     });
+
+    totalCreditsDiv.textContent =
+        `Total Credits: ${totalCredits}`;
 }
 
 function filterCourses(filter) {
-    let filtered;
-    if (filter === 'wdd') {
-        filtered = courses.filter(c => c.courseId.startsWith('WDD'));
-    } else if (filter === 'cse') {
-        filtered = courses.filter(c => c.courseId.startsWith('CSE'));
-    } else {
-        filtered = courses;
+
+    let filteredCourses = courses;
+
+    if (filter !== 'all') {
+        filteredCourses = courses.filter(
+            course => course.subject === filter
+        );
     }
-    displayCourses(filtered);
+
+    renderCourses(filteredCourses);
 }
 
-// Event listeners
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        filterCourses(button.dataset.filter);
-    });
-});
-
-// Initial load
-displayCourses(courses);
+filterCourses('all');

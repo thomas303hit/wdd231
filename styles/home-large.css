@@ -1,0 +1,74 @@
+@media screen and (min-width: 1200px) {
+  .container {
+    display: flex;
+    gap: 20px; 
+  }
+  section.text {
+    background-color: var(--color-primary); 
+    color: var(--color-text);
+    padding: 20px;
+    min-height: 280px;
+}
+
+section.content {
+    background-color: var(--color-primary); 
+    color: #fff;
+    padding: 20px;
+    min-height: 280px;
+}
+
+  .left-panel {
+    flex: 2;
+  }
+
+  .right-panel {
+    flex: 1;
+  }
+
+  nav.navigation {
+    flex-direction: row;
+    display: flex;
+  }
+
+  nav.navigation ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .filter-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #course-groups {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 100%;
+  }
+
+  .course-card {
+    width: 200px;
+  }
+
+  .photo {
+    height: 200px;
+    width: 200px;
+  }
+  #ham-btn {
+        display: none;
+    }
+  .filter-btn{
+    width: 470px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .logo-grade{
+    justify-content: center;
+  }
+  nav.navigation a:hover {
+  background-color: var(--color-primary);
+  color: black;
+  border-radius: 3px;
+}
+}
