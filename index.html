@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Thomas Guedes WDD 231</title>
+    <title>Thomas Gudes WDD 231</title>
 
-    <meta name="description" content="Thomas Guedes WDD 231 homepage featuring web development courses, student information, and coursework projects.">
-
-    <meta name="author" content="Thomas Guedes">
+    <meta name="description" content="Practical exercise page with a page describing about me">
+    <meta name="author" content="Thomas Gudes">
 
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/home-large.css">
@@ -19,133 +18,79 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
+    <header class="top-header">
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="website logo" class="logo">
 
-<header class="top-header">
-
-    <div class="logo-container">
-        <img src="images/logo.svg" alt="website logo" class="logo">
-
-        <span class="site-name">Thomas Guedes</span>
-    </div>
-
-    <button id="ham-btn" class="hamburger">☰</button>
-
-    <nav class="navigation">
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-</header>
-
-<main>
-
-    <div class="main-title">
-        <h1>Home</h1>
-    </div>
-
-    <div class="container">
-
-        <div class="left-panel">
-
-            <section class="text" id="about">
-
-                <h2>About Me</h2>
-
-                <p>
-                    My name is Thomas Guedes and I am currently studying web development.
-                    I enjoy learning about technology, programming, and creating websites.
-                    This page was developed as part of my WDD 231 coursework.
-                </p>
-
-            </section>
-
+            <span class="site-name">Site Name</span>
         </div>
 
-        <div class="right-panel">
+        <button id="ham-btn" class="hamburger">☰</button>
+        
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="chamber/index.html">Chamber Project</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
 
-            <section class="content">
+    </header>
 
-                <h2>Student Photo</h2>
-
-                <div class="photo"></div>
-
-            </section>
-
+    <main>
+        <div class="main-title">
+            <h1>Home</h1>
         </div>
 
-    </div>
-
-    <div class="bottom-panel">
-
-        <section id="courses">
-
-            <h2>Web Certificate Courses</h2>
-
-            <div class="filter-container">
-
-                <button class="filter-btn" id="filter-all">
-                    All Courses
-                </button>
-
-                <button class="filter-btn" id="filter-wdd">
-                    WDD Courses
-                </button>
-
-                <button class="filter-btn" id="filter-cse">
-                    CSE Courses
-                </button>
-
+        <div class="container">
+            <div class="left-panel">
+                <h2 class="title">About Me</h2>
+                <section class="text">
+                    <p>
+                        My name is Thomas Guedes and I am currently studying web development. I enjoy learning about technology, programming, and creating websites. This page was developed as part of my WDD 231 coursework.
+                    </p>
+                </section>
             </div>
 
-            <div id="course-groups"></div>
+            <div class="right-panel">
+                <h2 class="Student">Student Photo</h2>
+                <section class="content">
+                    <div class="photo"></div>
+                </section>
+            </div>
+        </div>
 
-            <div id="total-credits"></div>
+        <div class="bottom-panel">
+            <section>
+                <h2>Web Certificate Courses</h2>
 
-        </section>
+                <div class="filter-container">
+                    <button class="filter-btn" id="filter-all">All Courses</button>
+                    <button class="filter-btn" id="filter-wdd">WDD Courses</button>
+                    <button class="filter-btn" id="filter-cse">CSE Courses</button>
+                </div>
 
-    </div>
+                <div id="course-groups"></div>
+                <div id="total-credits"></div>
+            </section>
+        </div>
 
-    <section id="contact">
+        <div class="logo-grade">
+            <img src="images/linkendl.svg" alt="Site Logo" class="logo">
+            <img src="images/github.svg" alt="Site Logo" class="logo">
+            <img src="images/instagram.svg" alt="Site Logo" class="logo">
+        </div>
 
-        <h2>Contact</h2>
+    </main>
 
-        <p>Email: thomasdguedes64@gmail.com</p>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Thomas Guedes | Brazil</p>
 
-    </section>
-
-    <div class="logo-grade">
-
-        <img src="images/linkendl.svg" alt="LinkedIn Logo" class="logo">
-
-        <img src="images/github.svg" alt="GitHub Logo" class="logo">
-
-        <img src="images/instagram.svg" alt="Instagram Logo" class="logo">
-
-    </div>
-
-</main>
-
-<footer>
-
-    <p>
-        &copy; <span id="currentyear"></span> | Thomas Guedes | Brazil
-    </p>
-
-    <p>
-        <span id="lastmodified"></span>
-    </p>
-
-</footer>
-
+        <p><span id="lastmodified"></span></p>
+    </footer>
 </body>
 </html>
